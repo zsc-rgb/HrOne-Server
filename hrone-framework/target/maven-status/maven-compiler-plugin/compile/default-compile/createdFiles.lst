@@ -1,0 +1,5 @@
+com\hrone\framework\config\MybatisPlusConfig.class
+com\hrone\framework\config\CorsConfig.class
+com\hrone\framework\config\RedisConfig$FastJson2RedisSerializer.class
+com\hrone\framework\config\RedisConfig.class
+com\hrone\framework\exception\GlobalExceptionHandler.class

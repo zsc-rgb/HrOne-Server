@@ -1,0 +1,4 @@
+com\hrone\system\mapper\SysUserMapper.class
+com\hrone\system\service\ISysUserService.class
+com\hrone\system\domain\SysUser.class
+com\hrone\system\service\impl\SysUserServiceImpl.class
