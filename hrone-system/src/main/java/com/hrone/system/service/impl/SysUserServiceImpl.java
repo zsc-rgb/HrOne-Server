@@ -38,6 +38,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
      * @return 用户列表
      */
     @Override
+    @com.hrone.framework.aspectj.DataScope
     public List<SysUser> selectUserList(SysUser user) {
         LambdaQueryWrapper<SysUser> wrapper = new LambdaQueryWrapper<>();
         
@@ -50,6 +51,11 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         }
         if (StringUtils.isNotEmpty(user.getStatus())) {
             wrapper.eq(SysUser::getStatus, user.getStatus());
+        }
+        // 数据权限：本部门数据（演示）
+        Long scopeDeptId = com.hrone.framework.aspectj.DataScopeContext.getDeptId();
+        if (scopeDeptId != null) {
+            wrapper.eq(SysUser::getDeptId, scopeDeptId);
         }
         
         // 排除已删除的数据

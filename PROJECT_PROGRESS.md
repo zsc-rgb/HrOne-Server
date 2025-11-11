@@ -411,6 +411,7 @@
 - [x] 注解 `@RequiresPermissions` + 切面 `PermissionAspect` 实现接口权限验证
 - [x] 过滤器解析 Token，并在 request attribute 注入 `login_user_key`
 - [x] 校验顺序：优先使用登录用户的权限集合，回退到请求头 `X-Perms`（便于快速演示）
+ - [x] 数据权限过滤：新增 `@DataScope` 注解与 `DataScopeAspect`，在用户列表查询中演示“全部/本部门”数据范围（基于角色 data_scope 与用户 dept_id）
 
 后续计划：
 - [ ] 数据权限过滤（基于部门/角色的数据范围）

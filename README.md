@@ -188,7 +188,7 @@
 
 **7.3 权限验证 (2小时)**
 - [x] 接口权限验证（@RequiresPermissions + PermissionAspect）
-- [ ] 数据权限过滤（预告）
+- [x] 数据权限过滤（@DataScope + DataScopeAspect，支持“全部/本部门”演示）
 - [ ] 按钮权限控制（预告）
 
 **预计完成时间：** 1天
