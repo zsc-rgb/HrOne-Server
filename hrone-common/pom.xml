@@ -40,10 +40,17 @@
             <artifactId>commons-lang3</artifactId>
         </dependency>
 
-        <!-- MyBatis-Plus（用于BaseEntity注解） -->
+        <!-- MyBatis-Plus（用于BaseEntity注解和IPage接口） -->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-annotation</artifactId>
+            <version>3.4.2</version>
+        </dependency>
+        
+        <!-- MyBatis-Plus Core（包含IPage接口） -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-core</artifactId>
             <version>3.4.2</version>
         </dependency>
 

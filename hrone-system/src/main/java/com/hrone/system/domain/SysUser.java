@@ -36,6 +36,11 @@ public class SysUser extends BaseEntity {
     private Long userId;
     
     /**
+     * 部门ID
+     */
+    private Long deptId;
+    
+    /**
      * 用户账号
      */
     private String userName;
@@ -99,6 +104,14 @@ public class SysUser extends BaseEntity {
     
     public void setUserId(Long userId) {
         this.userId = userId;
+    }
+    
+    public Long getDeptId() {
+        return deptId;
+    }
+    
+    public void setDeptId(Long deptId) {
+        this.deptId = deptId;
     }
     
     public String getUserName() {

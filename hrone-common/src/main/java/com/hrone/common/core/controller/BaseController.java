@@ -1,5 +1,6 @@
 package com.hrone.common.core.controller;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.hrone.common.constant.HttpStatus;
 import com.hrone.common.core.domain.AjaxResult;
 import com.hrone.common.core.domain.PageDomain;
@@ -91,6 +92,26 @@ public class BaseController {
         // 暂时使用列表大小作为总数
         // 在后续阶段集成PageHelper后，使用 PageInfo 获取真实总数
         rspData.setTotal(list.size());
+        return rspData;
+    }
+    
+    /**
+     * 响应请求分页数据（MyBatis-Plus IPage版本）
+     * 
+     * 使用场景：
+     * - MyBatis-Plus分页查询后调用
+     * - 从IPage中提取数据列表和总记录数
+     * - 构建TableDataInfo响应
+     * 
+     * @param page MyBatis-Plus分页对象
+     * @return 分页响应对象
+     */
+    protected TableDataInfo getDataTable(IPage<?> page) {
+        TableDataInfo rspData = new TableDataInfo();
+        rspData.setCode(HttpStatus.SUCCESS);
+        rspData.setMsg("查询成功");
+        rspData.setRows(page.getRecords());
+        rspData.setTotal(page.getTotal());
         return rspData;
     }
     
